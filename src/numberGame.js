@@ -10,21 +10,12 @@ let numbers = {
 
 function numberReport(number) {
   let result = '';
+  let keys = Object.keys(numbers);
 
-  if (number % 3 === 0 || number.toString().indexOf('3') !== -1) {
-    result += numbers[3];
-  }
-  if (number % 5 === 0 || number.toString().indexOf('5') !== -1) {
-    result += numbers[5];
-  }
-  if (number % 7 === 0 || number.toString().indexOf('7') !== -1) {
-    result += numbers[7];
-  }
-
-  if (result === '') {
-    result += number.toString();
-  }
-  return result;
+  keys.forEach((key)=>{
+    result += number % parseInt(key) === 0 || number.toString().indexOf(key) !== -1 ? numbers[key] : '';
+  });
+  return result ? result : number.toString();
 }
 
 module.exports = numberReport;
