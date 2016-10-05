@@ -16,6 +16,11 @@ describe('number game', ()=>{
     expect(expected).toEqual('fizz');
   });
 
+  it('should return fizz when input 13', ()=>{
+    let expected = numberReport(13);
+    expect(expected).toEqual('fizz');
+  });
+
   it('should return buzz when input 5', ()=>{
     let expected = numberReport(5);
     expect(expected).toEqual('buzz');
@@ -24,6 +29,11 @@ describe('number game', ()=>{
   it('should return whizz when input 7', ()=>{
     let expected = numberReport(7);
     expect(expected).toEqual('whizz');
+  });
+
+  it('should return whizz when input 27', ()=>{
+    let expected = numberReport(27);
+    expect(expected).toEqual('fizzwhizz');
   });
 
   it('should return fizzwhizz when input 21', ()=>{
